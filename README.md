@@ -36,3 +36,7 @@ Fotografije su optimizirane u AVIF i WebP formatima.
 - Novi, jasno vidljiv vektorski Melman & Co logo u navigaciji i footeru.
 - Nova oštra premium hero fotografija s desktop i mobile varijantom.
 - Hero se učitava prioritetno (`fetchpriority=high`) i bez grain sloja koji je ranije mogao smanjiti dojam oštrine.
+
+
+## Cloudflare routing fix
+This build uses directory routes (`/projekti/`, `/kontakt/`, etc.) and root-absolute asset paths. Do not add redirects from `/slug` to `/slug.html`; Cloudflare Pages already handles HTML pretty URLs and such rules can create redirect loops.
