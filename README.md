@@ -36,3 +36,8 @@ Fotografije su optimizirane u AVIF i WebP formatima.
 - Novi, jasno vidljiv vektorski Melman & Co logo u navigaciji i footeru.
 - Nova oštra premium hero fotografija s desktop i mobile varijantom.
 - Hero se učitava prioritetno (`fetchpriority=high`) i bez grain sloja koji je ranije mogao smanjiti dojam oštrine.
+
+## Tipografija
+- Profesionalni arhitektonski tipografski sustav bez vanjskih font servisa.
+- Naslovi koriste premium native display stack (Bahnschrift / Avenir Next / Helvetica Neue / Segoe UI Variable Display).
+- Tekst i UI koriste optimizirani system stack za maksimalnu čitljivost i privatnost bez dodatnih mrežnih zahtjeva.

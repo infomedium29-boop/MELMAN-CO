@@ -300,3 +300,278 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%;height:auto} 
   .cookie-notice__actions{display:grid;grid-template-columns:1fr auto}
   .cookie-notice__actions .btn{width:100%}
 }
+
+/* ============================================================
+   2026-08-12 PROFESSIONAL TYPOGRAPHY SYSTEM
+   Architectural / industrial direction: restrained, technical,
+   highly legible. Uses premium native font stacks only, so there
+   are no extra third-party font requests or privacy dependencies.
+   ============================================================ */
+:root{
+  --font-display:"Bahnschrift","Avenir Next","Helvetica Neue","Segoe UI Variable Display","Segoe UI",Roboto,Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-ui:"Aptos","Segoe UI Variable Text","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;
+}
+
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{
+  font-family:var(--font-body);
+  font-size:16px;
+  font-weight:400;
+  line-height:1.58;
+  letter-spacing:-.008em;
+  font-kerning:normal;
+  font-synthesis:none;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1;
+}
+
+/* Headline system: geometric and architectural, without excessive boldness. */
+.display,.display-sm,.headline,.statement-text,
+.project-info h3,.step h3,.value h3,.legal-content h2,
+.contact-block a,.contact-block p{
+  font-family:var(--font-display);
+  font-kerning:normal;
+  text-wrap:balance;
+}
+.display{
+  font-size:clamp(3.35rem,8.15vw,8.25rem);
+  line-height:.91;
+  letter-spacing:-.058em;
+  font-weight:500;
+}
+.display-sm{
+  font-size:clamp(2.9rem,5.75vw,5.95rem);
+  line-height:.96;
+  letter-spacing:-.048em;
+  font-weight:500;
+}
+.headline{
+  font-size:clamp(2.25rem,4.15vw,4.5rem);
+  line-height:1.015;
+  letter-spacing:-.043em;
+  font-weight:520;
+}
+.statement-text{
+  font-size:clamp(2.5rem,4.65vw,5.25rem);
+  line-height:1.015;
+  letter-spacing:-.047em;
+  font-weight:520;
+}
+
+/* Editorial body typography. */
+p,.lead,.body-lg,.service-desc,.project-info p,.step p,.value p,.local-copy p,.legal-content p,.footer-brand p{
+  text-wrap:pretty;
+}
+.lead{
+  font-family:var(--font-body);
+  font-size:clamp(1.08rem,1.55vw,1.42rem);
+  line-height:1.56;
+  letter-spacing:-.012em;
+  font-weight:400;
+  color:#444d4f;
+}
+.body-lg{
+  font-size:clamp(1rem,1.15vw,1.12rem);
+  line-height:1.65;
+  letter-spacing:-.008em;
+}
+.hero-copy{
+  font-family:var(--font-body);
+  font-size:clamp(1.02rem,1.35vw,1.24rem);
+  line-height:1.55;
+  letter-spacing:-.01em;
+  font-weight:400;
+}
+
+/* Small caps / metadata: tighter and more deliberate. */
+.eyebrow,.hero-topline,.project-number,.service-num,.step-num,.value-num,
+.legal-num,.footer-col h4,.field label,.contact-block span,.cookie-notice__eyebrow{
+  font-family:var(--font-ui);
+  font-weight:650;
+  font-variant-numeric:tabular-nums;
+}
+.eyebrow{
+  font-size:.69rem;
+  line-height:1.25;
+  letter-spacing:.19em;
+}
+.hero-topline{
+  font-size:.72rem;
+  line-height:1.4;
+  letter-spacing:.155em;
+  font-weight:600;
+}
+.project-number,.service-num,.step-num,.value-num,.legal-num{
+  letter-spacing:.15em;
+}
+
+/* Navigation and controls: calm, precise, less template-like. */
+.nav-links,.mobile-links,.mobile-meta,.btn,.nav-cta,.mobile-menu-cta a,
+.footer-col,.footer-bottom,.form,.cookie-notice{
+  font-family:var(--font-ui);
+}
+.nav-links{
+  font-size:.84rem;
+  font-weight:520;
+  letter-spacing:-.006em;
+}
+.nav-links a{padding-top:11px;padding-bottom:11px}
+.nav-cta{
+  font-size:.82rem;
+  font-weight:650;
+  letter-spacing:.005em;
+}
+.btn{
+  font-size:.83rem;
+  font-weight:650;
+  letter-spacing:.01em;
+  line-height:1.2;
+}
+.mobile-links a{
+  font-family:var(--font-display);
+  font-weight:480;
+  letter-spacing:-.046em;
+  line-height:1.02;
+}
+.mobile-menu-cta a{font-weight:650;letter-spacing:0}
+
+/* Service and project typography. */
+.service-name{
+  font-family:var(--font-display);
+  font-size:clamp(1.4rem,2.05vw,2.05rem);
+  line-height:1.12;
+  letter-spacing:-.032em;
+  font-weight:500;
+}
+.service-desc{
+  font-size:.98rem;
+  line-height:1.62;
+  letter-spacing:-.006em;
+}
+.project-info h3{
+  font-weight:520;
+  letter-spacing:-.045em;
+  line-height:1.015;
+}
+.projects-feature .project-info h3{
+  font-size:clamp(2rem,3.15vw,3.35rem);
+}
+.project-info p{
+  font-size:1rem;
+  line-height:1.62;
+  letter-spacing:-.008em;
+}
+.step h3{
+  font-weight:540;
+  letter-spacing:-.035em;
+  line-height:1.08;
+}
+.step p{font-size:.98rem;line-height:1.62}
+
+/* Cards: strong title, quieter supporting copy. */
+.value h3{
+  font-size:clamp(1.45rem,2vw,2.12rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
+  font-weight:560;
+}
+.value p{font-size:.94rem;line-height:1.62}
+.area{
+  font-family:var(--font-display);
+  font-weight:450;
+  letter-spacing:-.038em;
+  line-height:1.05;
+}
+
+/* Contact and forms. */
+.contact-block a,.contact-block p{
+  font-size:clamp(1.18rem,1.8vw,1.52rem);
+  line-height:1.38;
+  letter-spacing:-.025em;
+  font-weight:500;
+}
+.field label,.contact-block span{
+  font-size:.68rem;
+  letter-spacing:.155em;
+  font-weight:650;
+}
+.field input,.field textarea{
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:-.008em;
+}
+
+/* Legal copy deliberately quieter than sales pages. */
+.legal-content h2{
+  font-size:clamp(1.6rem,2.2vw,2.42rem);
+  line-height:1.08;
+  letter-spacing:-.035em;
+  font-weight:560;
+}
+.legal-content p{
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.74;
+  letter-spacing:-.004em;
+}
+.legal-table{font-family:var(--font-ui);line-height:1.55}
+
+/* Footer hierarchy. */
+.footer-col h4{
+  font-size:.66rem;
+  letter-spacing:.17em;
+  font-weight:650;
+}
+.footer-col a,.footer-col span{
+  font-size:.88rem;
+  line-height:1.5;
+  letter-spacing:-.005em;
+}
+.footer-brand p{
+  font-size:.94rem;
+  line-height:1.62;
+  letter-spacing:-.006em;
+}
+.footer-bottom{font-size:.72rem;letter-spacing:.005em}
+
+/* Better line-breaking, especially in Croatian headings. */
+h1,h2,h3{hyphens:none;overflow-wrap:normal}
+
+@media(max-width:980px){
+  .display{font-size:clamp(3.25rem,10vw,6rem)}
+  .display-sm{font-size:clamp(2.75rem,8.4vw,5rem)}
+  .headline{font-size:clamp(2.25rem,6vw,3.9rem)}
+  .statement-text{font-size:clamp(2.4rem,6.5vw,4.35rem)}
+  .lead{font-size:clamp(1.08rem,2.2vw,1.32rem)}
+}
+
+@media(max-width:700px){
+  body{font-size:15.5px;line-height:1.58}
+  .display{
+    font-size:clamp(3rem,14vw,4.85rem);
+    line-height:.93;
+    letter-spacing:-.055em;
+  }
+  .display-sm{
+    font-size:clamp(2.65rem,11.8vw,4.15rem);
+    line-height:.96;
+    letter-spacing:-.048em;
+  }
+  .headline{
+    font-size:clamp(2.18rem,10.2vw,3.55rem);
+    line-height:1.01;
+  }
+  .statement-text{
+    font-size:clamp(2.25rem,10.6vw,3.75rem);
+    line-height:1.015;
+  }
+  .lead{font-size:1.05rem;line-height:1.58}
+  .hero-copy{font-size:1.02rem;line-height:1.58}
+  .eyebrow{font-size:.66rem;letter-spacing:.185em}
+  .mobile-links a{font-size:clamp(2.45rem,10.8vw,3.55rem)}
+  .projects-feature .project-info h3{font-size:clamp(2rem,9vw,2.65rem)}
+  .service-name{font-size:1.45rem}
+  .value h3{font-size:1.55rem}
+  .legal-content h2{font-size:1.7rem}
+}
