@@ -72,3 +72,10 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%;height:auto} 
 @media(max-width:1120px){.brand-mark.brand-logo{width:168px;flex-basis:168px;height:38px}.nav-links{gap:14px;font-size:.84rem}.nav-cta{padding:12px 14px!important}}
 @media(max-width:900px){.brand-mark.brand-logo{width:176px;flex-basis:176px;height:40px}}
 @media(max-width:600px){.brand-mark.brand-logo{width:158px;flex-basis:158px;height:36px}.footer-logo .brand-mark.brand-logo{width:200px;height:45px;flex-basis:200px}.loader-mark{width:180px}.hero-media img{object-position:52% 50%}}
+
+/* 2026-08 visual uplift: ensure key photography is visible immediately */
+.media-hero{position:relative}
+.media-hero picture,.media-hero img,.gallery-item picture{display:block;width:100%}
+.media-hero.mask-reveal,.gallery-item.mask-reveal{clip-path:inset(0)!important}
+.media-hero img{display:block;width:100%;height:100%;object-fit:cover}
+.gallery-grid{align-items:start}
