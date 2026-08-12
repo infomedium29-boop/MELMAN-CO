@@ -4,13 +4,8 @@
   body.classList.add('page-enter');
   const loader = document.querySelector('.site-loader');
   if (loader) {
-    const seen = sessionStorage.getItem('melman-loader');
-    if (seen) loader.classList.add('is-hidden');
-    else {
-      sessionStorage.setItem('melman-loader','1');
-      window.addEventListener('load', () => setTimeout(() => loader.classList.add('is-hidden'), 620));
-      setTimeout(() => loader.classList.add('is-hidden'), 1600);
-    }
+    window.addEventListener('load', () => setTimeout(() => loader.classList.add('is-hidden'), 480));
+    setTimeout(() => loader.classList.add('is-hidden'), 1400);
   }
 
   const nav = document.querySelector('.nav');
@@ -51,7 +46,7 @@
     addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return; if(e.key==='Escape')close(); if(e.key==='ArrowLeft')show(idx-1); if(e.key==='ArrowRight')show(idx+1);});
   }
 
-  // Demo contact form: opens default mail app with prepared message.
+  // Contact form: opens the visitor's default mail app with a prepared message.
   const form=document.querySelector('[data-mail-form]');
   if(form){
     form.addEventListener('submit',e=>{
@@ -62,4 +57,31 @@
       const status=form.querySelector('.form-status'); if(status){status.textContent='Otvara se Vaša e-mail aplikacija s pripremljenim upitom.';status.classList.add('show');}
     });
   }
+  // Privacy / cookie notice. No analytics or marketing cookies are loaded on this site.
+  const privacyKey = 'melman_privacy_ack';
+  const showPrivacyNotice = () => {
+    try { if (localStorage.getItem(privacyKey)) return; } catch (_) {}
+    const notice = document.createElement('aside');
+    notice.className = 'cookie-notice';
+    notice.setAttribute('role','dialog');
+    notice.setAttribute('aria-live','polite');
+    notice.setAttribute('aria-label','Privatnost i kolačići');
+    notice.innerHTML = `
+      <div class="cookie-notice__eyebrow">Privatnost i kolačići</div>
+      <h2>Koristimo samo nužnu pohranu.</h2>
+      <p>Ova stranica trenutačno ne koristi analitičke ni marketinške kolačiće. Lokalna pohrana služi samo za pamćenje ove obavijesti.</p>
+      <div class="cookie-notice__actions">
+        <button class="btn btn-dark" type="button" data-cookie-ack>U redu</button>
+        <a class="cookie-notice__link" href="/kolacici/">Politika kolačića</a>
+      </div>`;
+    document.body.appendChild(notice);
+    requestAnimationFrame(() => notice.classList.add('show'));
+    notice.querySelector('[data-cookie-ack]').addEventListener('click', () => {
+      try { localStorage.setItem(privacyKey, 'acknowledged'); } catch (_) {}
+      notice.classList.remove('show');
+      setTimeout(() => notice.remove(), 380);
+    });
+  };
+  showPrivacyNotice();
+
 })();
