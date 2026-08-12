@@ -31,3 +31,8 @@ Kada bude poznata konačna domena:
 4. po želji dodati apsolutne canonical URL-ove u `<head>` svake stranice.
 
 Fotografije su optimizirane u AVIF i WebP formatima.
+
+## Update 2026-08-12
+- Novi, jasno vidljiv vektorski Melman & Co logo u navigaciji i footeru.
+- Nova oštra premium hero fotografija s desktop i mobile varijantom.
+- Hero se učitava prioritetno (`fetchpriority=high`) i bez grain sloja koji je ranije mogao smanjiti dojam oštrine.
