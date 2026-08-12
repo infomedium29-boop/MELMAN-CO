@@ -75,7 +75,7 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%;height:auto} 
 
 /* 2026-08 visual uplift: ensure key photography is visible immediately */
 .media-hero{position:relative}
-.media-hero picture,.media-hero img,.gallery-item picture{display:block;width:100%}
+.media-hero picture,.media-hero img,.gallery-item picture{display:block;width:100%}.media-hero picture{height:100%}
 .media-hero.mask-reveal,.gallery-item.mask-reveal{clip-path:inset(0)!important}
 .media-hero img{display:block;width:100%;height:100%;object-fit:cover}
 .gallery-grid{align-items:start}
