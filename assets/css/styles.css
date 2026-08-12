@@ -79,3 +79,60 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%;height:auto} 
 .media-hero.mask-reveal,.gallery-item.mask-reveal{clip-path:inset(0)!important}
 .media-hero img{display:block;width:100%;height:100%;object-fit:cover}
 .gallery-grid{align-items:start}
+
+/* 2026-08-12 layout correction — denser premium rhythm, no empty image blocks */
+.section{padding:clamp(68px,7vw,108px) 0}
+.section-tight{padding:clamp(44px,5.5vw,78px) 0}
+.inner-hero{padding:clamp(142px,15vw,175px) 0 clamp(52px,6vw,72px)}
+.media-hero{height:clamp(390px,50vw,640px);max-height:640px}
+
+/* Image-led sections must never disappear if scroll reveal JS is delayed or unavailable. */
+.split-media .mask-reveal,
+.media-hero.mask-reveal{
+  clip-path:none!important;
+  opacity:1!important;
+  transform:none!important;
+}
+.split-media{gap:18px}
+.split-media figure{min-height:clamp(400px,44vw,560px)}
+.split-media figure:last-child{min-height:clamp(340px,36vw,470px)}
+.split-media picture{display:block;width:100%;height:100%}
+.split-media img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* Keep explanatory text readable on light sections; dark project section overrides below. */
+.projects-head .lead{color:#596164}
+.projects-feature .projects-head .lead{color:rgba(255,255,255,.58)}
+
+/* The content sections should flow without oversized blank vertical bands. */
+.statement-grid{row-gap:36px}
+.values{align-items:stretch}
+.value{min-height:240px}
+.contact-grid{align-items:start}
+.area-band.section{padding-top:clamp(64px,7vw,96px);padding-bottom:clamp(64px,7vw,96px)}
+
+/* Image sections feel intentional rather than like isolated full-screen spacers. */
+.section-tight + .section,
+.section + .section-tight{scroll-margin-top:90px}
+
+@media(max-width:980px){
+  .section{padding:68px 0}
+  .section-tight{padding:48px 0}
+  .media-hero{height:clamp(340px,64vw,520px)}
+  .split-media{grid-template-columns:1fr 1fr;gap:12px}
+  .split-media figure,.split-media figure:last-child{min-height:0;aspect-ratio:4/3}
+  .values{grid-template-columns:repeat(3,1fr)}
+  .value{min-height:220px;padding:22px}
+}
+
+@media(max-width:760px){
+  .section{padding:58px 0}
+  .section-tight{padding:40px 0}
+  .inner-hero{padding-top:125px;padding-bottom:44px}
+  .media-hero{height:62vw;min-height:280px;max-height:420px}
+  .split-media{grid-template-columns:1fr;gap:10px}
+  .split-media figure,.split-media figure:last-child{aspect-ratio:4/3;min-height:0}
+  .values{grid-template-columns:1fr;gap:10px}
+  .value{min-height:180px}
+  .contact-grid{gap:42px}
+  .area-band.section{padding-top:56px;padding-bottom:56px}
+}
